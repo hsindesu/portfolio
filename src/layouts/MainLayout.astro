@@ -1,0 +1,46 @@
+---
+import MainNav from "../components/MainNav/MainNav.astro"
+import HTMLHead from "./HTMLHead.astro"
+import SectionContainer from "./SectionContainer.astro"
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <HTMLHead title={title} />
+  <body class="h-svh">
+    <slot name="BeforePageHead" />
+    <header>
+      <div class="bg-slate-50 border-b-2 shadow-sm">
+        <SectionContainer>
+          <MainNav />
+        </SectionContainer>
+      </div>
+      <SectionContainer>
+        <slot name="PageHead" />
+      </SectionContainer>
+    </header>
+
+    <slot name="BeforePageBody" />
+
+    <main>
+      <SectionContainer class="min-h-dvh">
+        <slot name="PageBody" />
+      </SectionContainer>
+    </main>
+
+    <slot name="AfterPageBody" />
+
+    <footer id="pageFoote" class="bg-slate-950 text-gray-200">
+      <SectionContainer>
+        <slot name="PageFooter" />
+        <div class="text-right">
+          <a href="" class="inline-block border-2 rounded-full">LinkedIn</a>
+          <a href="" class="inline-block border-2 rounded-full">Github</a>
+          <a href="" class="inline-block border-2 rounded-full">Resume</a>
+      </div>  
+      </SectionContainer>
+    </footer>
+  </body>
+</html>

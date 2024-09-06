@@ -1,0 +1,42 @@
+---
+import MainNavLink from "./MainNavLink.astro";
+---
+
+<nav class="flex justify-between">
+  <a id="logo" href="/" title="Home page">
+    <span id="LogoShape" class="inline-block">{"</>"}</span>
+    <span id="LogoText" class="inline-block">Hsin</span>
+  </a>
+  <ul class="flex justify-evenly">
+    <li><MainNavLink href="/projects">Projects</MainNavLink></li>
+    <li><MainNavLink href="/about">About</MainNavLink></li>
+    <li><MainNavLink href="/blog">Blog</MainNavLink></li>
+  </ul>
+</nav>
+
+<style>
+  #LogoShape {
+    position: relative;
+    z-index: 1;
+  }
+  #LogoShape:before {
+    content: "\2B22";
+    display: block;
+    color: magenta;
+    font-size: 36px;
+    position: absolute;
+    z-index: -1;
+    top: -20px;
+    left: -7px;
+  }
+  #LogoShape:after {
+    content: "\2B22";
+    display: block;
+    color: white;
+    font-size: 32px;
+    position: absolute;
+    z-index: -1;
+    top: -20px;
+    left: -7px;
+  }
+</style>

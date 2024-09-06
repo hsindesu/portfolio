@@ -1,16 +1,31 @@
 ---
-
+import MainLayout from "../layouts/MainLayout.astro"
+import BiFold from "../components/BiFold.astro"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1 class="text-5xl">Astro</h1>
-	</body>
-</html>
+<MainLayout title="Hsin-Fang Wang Profile">
+	<div slot="PageHead">
+		<div class="border-2 border-red-200 min-h-[200px]">About Me Summary</div>
+	</div>
+
+	<div slot="BeforePageBody">
+		<div class="bg-gradient-to-r from-blue-400 to-green-400">
+			<div class="flex justify-center items-center h-full">
+				<h1 class="text-4xl text-white">Feedback</h1>
+			</div>
+		</div>
+	</div>
+
+	<div slot="PageBody">
+		<h1>Home</h1>
+		<div class="col-span-2 border-2 border-red-200 min-h-[200px]">
+			Blog post
+		</div>
+		<BiFold image="url.jpg" alt="alt text">
+			Project 1
+		</BiFold>
+		<BiFold image="url.jpg" alt="alt text" reverse>
+			Project 2
+		</BiFold>
+	</div>
+</MainLayout>

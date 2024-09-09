@@ -3,13 +3,13 @@ import MainNav from "../components/MainNav/MainNav.astro"
 import HTMLHead from "./HTMLHead.astro"
 import SectionContainer from "./SectionContainer.astro"
 
-const { title } = Astro.props;
+const { title, description, class: className = '' } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <HTMLHead title={title} />
-  <body class="h-svh">
+  <HTMLHead {title} {description} />
+  <body class=`h-svh ${className}`>
     <slot name="BeforePageHead" />
     <header>
       <div class="bg-slate-50 border-b-2 shadow-sm">

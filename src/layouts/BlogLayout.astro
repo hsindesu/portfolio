@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import { formatDate } from "../js/utils"
+import MainLayout from "./MainLayout.astro"
+const {
+  title,
+  description,
+  date,
+  category,
+  draft,
+  image,
+  file,
+  url,
+} = Astro.props.frontmatter;
+
+const { src, alt } = image;
+
+console.log(Astro);
+---
+<MainLayout {title} {description} class="blog">
+    <div slot="PageHead" class="text-center">
+        <h1 class="uppercase text-3xl">{title}</h1>
+        <!-- TODO: fix images -->
+        <p>
+            <span>{ formatDate(date) }</span>
+        </p>
+    </div>
+    <div slot="PageBody" class="text-lg max-w-[540px] mx-auto px-6">
+        <slot />
+    </div>
+</MainLayout>
+
+
+
+
+<!-- TODO fix paragraph spacing -->
+<style>
+    .blog p {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+</style>

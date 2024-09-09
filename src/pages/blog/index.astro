@@ -1,0 +1,33 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro"
+const allPosts = await Astro.glob('./*.md');
+---
+
+<MainLayout title="Hsin-Fang Wang blog" class="blog">
+	<div slot="PageHead">
+		<title>Blog</title>
+	</div>
+
+	<div slot="PageBody" class="max-w-screen-md mx-auto">
+		<h1>Blog</h1>
+		<ul>
+			{allPosts.map((post) => {
+				const { draft, title, blurb } = post.frontmatter;
+				// only publish if not in draft mode
+				if (!draft) {
+					return (
+						<li class="flex gap-16 my-12">
+							<div>
+								<img src="" alt="thumbnail" />
+							</div>
+							<div>
+								<a href="">{title}</a>
+								<p>{blurb}</p>
+							</div>
+						</li>
+					)
+				}
+			})}
+		</ul>
+	</div>
+</MainLayout>

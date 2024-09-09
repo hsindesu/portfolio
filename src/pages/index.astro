@@ -1,11 +1,41 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro"
 import BiFold from "../components/BiFold.astro"
+// #a2b55b light green
+// #476d08 green
+// #344827 darker green
 ---
 
 <MainLayout title="Hsin-Fang Wang Profile">
-	<div slot="PageHead">
-		<div class="border-2 border-red-200 min-h-[200px]">About Me Summary</div>
+	<div slot="BeforePageBody" class="relative overflow-hidden flex justify-center">
+		<div class="min-h-[600px] flex items-center gap-12">
+			<div>
+				<img
+					src="../../public/images/hsin.jpg"
+					title="Profile picture of Hsin"
+					class="drop-shadow-lg rounded-full max-w-[200px]"
+				/>
+			</div>
+			<div>
+				<h2 class="text-5xl">
+					My name is Hsin
+					<!-- TODO: add pronunication link <a href="https://translate.google.com/?hl=en&sl=zh-TW&tl=en&text=%E4%BF%A1&op=translate" title="how to pronounce">icon</a> -->
+				</h2>
+				<div>
+					<p>
+						I'm Connector of Needs to Capabilities.
+						I'm the <span class="bold">dash</span> between "Need-Cap".
+					</p>
+					<p>
+						I have a habit of falling in love with customer problems,
+					</p>
+					<p>
+						and I mostly work to solve them at scale with full-stack development.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div id="hero-bg"></div>
 	</div>
 
 	<div slot="BeforePageBody">
@@ -29,3 +59,32 @@ import BiFold from "../components/BiFold.astro"
 		</BiFold>
 	</div>
 </MainLayout>
+<style>
+	#hero-bg {
+		background: #a2b55b;
+		height: 600px;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		z-index: -1;
+	}
+	#hero-bg:before, #hero-bg:after {
+		content: "";
+		position: absolute;
+		opacity: 0.05;
+		width: 200%;
+		height: 300px;
+		left: -600px;
+	}
+	#hero-bg:before {
+		background: #344827;
+		top: -50%;
+		transform: rotate(147deg);
+	}
+	#hero-bg:after {
+		background-color: #476d08;
+		bottom: -50%;
+		transform: rotate(27deg);
+
+	}
+</style>

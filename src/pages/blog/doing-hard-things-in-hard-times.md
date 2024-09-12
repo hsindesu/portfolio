@@ -10,6 +10,8 @@ image: {
     src: "../../public/images/wind-rivers.jpg",
     alt: "Wind Rivers, Wyoming",
 }
+tags: #layoff #mental-health #bjj
+
 ---
 
 Today, I started Brazilian Jiujitsu (and thoroughly got my butt kicked). Seems I have a habit of starting hard things when life presents a challenge. 12 years ago, I started breakdancing to get over a heartbreak. It's not so different this time with Intuit's decision to shutdown its Boise site.

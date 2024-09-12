@@ -18,11 +18,13 @@ const allPosts = await Astro.glob('./*.md');
 					return (
 						<li class="flex gap-16 my-12">
 							<div>
-								<img src="" alt="thumbnail" />
+								<a href={`${post.url}`}>
+									<img src="" alt="thumbnail" />
+								</a>
 							</div>
 							<div>
-								<a href="">{title}</a>
-								<p>{blurb}</p>
+								<a href={`${post.url}`} class="text-4xl">{title}</a>
+								<p class="mt-2">{blurb}</p>
 							</div>
 						</li>
 					)

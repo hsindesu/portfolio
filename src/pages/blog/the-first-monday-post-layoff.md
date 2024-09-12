@@ -10,6 +10,7 @@ image: {
     src: "../../public/images/wind-rivers.jpg",
     alt: "Wind Rivers, Wyoming",
 }
+tags: ['layoff', 'mental-health', 'fitness']
 ---
 
 Well, it's finally the Monday after. The first after being laid off. The anxiety of getting the kids ready in order to make a meeting is now replaced with the anxiety of stillness after the children have left. This is my first time leaving a job involuntarily, and it kind of feels like the girl I like didn't like me back (anymore): I know I could've done better, and given the chance, I'd do it all over again.

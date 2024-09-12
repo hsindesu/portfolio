@@ -11,13 +11,14 @@ const {
   image,
   file,
   url,
+  tags
 } = Astro.props.frontmatter;
 
 const { src, alt } = image;
 
 console.log(Astro);
 ---
-<MainLayout {title} {description} class="blog">
+<MainLayout {title} {description} class="blog font-display">
     <div slot="PageHead" class="text-center">
         <h1 class="uppercase text-3xl">{title}</h1>
         <!-- TODO: fix images -->

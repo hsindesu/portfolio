@@ -9,6 +9,11 @@ export function slugify(str) {
   return str;
 }
 
+/**
+ * Simple date formatter that returns the following format "July 21, 2024"
+ * @param {Date} date 
+ * @returns {string}
+ */
 export function formatDate(date) {
     return new Date(date).toLocaleDateString("default", {
         month: 'long',
@@ -16,4 +21,32 @@ export function formatDate(date) {
         day: 'numeric',
         timeZone: 'UTC'
     });
+}
+
+/**
+ * Globs provide full file paths as the object keys. This "deglobs"
+ * the keys by transforming them into just the file name and extension.
+
+ * @param {} globObject Glob object
+ * @returns a new glob object where file names, rather than relative paths,
+ * are the key.
+*/
+export function deglobPathObject(globObject) {
+  let deglob = {}
+
+  for (const key in globObject) {
+    deglob[deglobPath(key)] = globObject[key];
+  }
+
+  return deglob;
+}
+
+/**
+ * Returns the file name of a file path
+ * @param {*} str 
+ * @returns 
+ */
+export function deglobPath(str) {
+    const segments = str.split("/");
+    return segments[segments.length - 1];
 }

@@ -1,30 +1,41 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from "../../layouts/MainLayout.astro"
+import { deglobPathObject, deglobPath } from '../../js/utils';
 const allPosts = await Astro.glob('./*.md');
+const imagePaths = import.meta.glob("../../../public/images/*");
+const deGlobImagePaths = deglobPathObject(imagePaths);
 ---
 
-<MainLayout title="Hsin-Fang Wang blog" class="blog">
-	<div slot="PageHead">
-		<title>Blog</title>
-	</div>
+<MainLayout title="OnKeyDown blog - Hsin-Fang Wang" class="blog">
+	<div slot="PageBody" class="max-w-screen-md mt-24 mx-auto">
+		<div class="keyboard">
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+		</div>
+		<h1 class="text-8xl">onKeyDown</h1>
 
-	<div slot="PageBody" class="max-w-screen-md mx-auto">
-		<h1>Blog</h1>
 		<ul>
 			{allPosts.map((post) => {
-				const { draft, title, blurb } = post.frontmatter;
+				const { draft, title, blurb, titleImage } = post.frontmatter;
+				// console.log(titleImage);
 				// only publish if not in draft mode
+				console.log(post.url);
 				if (!draft) {
 					return (
-						<li class="flex gap-16 my-12">
-							<div>
+						<li class="my-6 border-b-2">
+							<div class="prose py-6">
 								<a href={`${post.url}`}>
-									<img src="" alt="thumbnail" />
+									<h2 class="text-4xl">{title}</h2>
+									<Image
+									src={deGlobImagePaths[deglobPath(titleImage.src)]()}
+									alt={titleImage.alt}
+									widths={[240, 540, 800]}
+									sizes={`500px`}
+								/>
 								</a>
-							</div>
-							<div>
-								<a href={`${post.url}`} class="text-4xl">{title}</a>
-								<p class="mt-2">{blurb}</p>
+								<p class="mt-2">{blurb}</p>	
 							</div>
 						</li>
 					)
@@ -32,4 +43,21 @@ const allPosts = await Astro.glob('./*.md');
 			})}
 		</ul>
 	</div>
+	<style>
+		.keyboard {
+			display: flex;
+		}
+		.key {
+			width: 42px;
+			height: 42px;
+			border: solid thin #ccc;
+			box-shadow: inset 0 0 0 12px #ccc;
+		}
+
+		.key:nth-child(2) {
+			box-shadow: inset 0 0 0 11px #999;
+			background-color: #999;
+			margin-top: 12px
+		}
+	</style>
 </MainLayout>

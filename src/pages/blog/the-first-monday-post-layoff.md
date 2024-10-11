@@ -6,7 +6,7 @@ description: "Well, it's finally the Monday after. The first after being laid of
 date: 2024-07-15
 category:
 draft: false
-image: {
+titleImage: {
     src: "../../public/images/wind-rivers.jpg",
     alt: "Wind Rivers, Wyoming",
 }

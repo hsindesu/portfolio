@@ -6,8 +6,8 @@ description: "Discover how a simple stick from a past adventure became a powerfu
 date: 2024-07-21
 category:
 draft: false
-image: {
-    src: "../../public/images/wind-rivers.jpg",
+titleImage: {
+    src: "../../public/images/my-cool-stick.jpg",
     alt: "Wind Rivers, Wyoming",
 }
 ---

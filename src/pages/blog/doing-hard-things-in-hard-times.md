@@ -6,9 +6,9 @@ description: "This blog post reflects on the author's experience starting Brazil
 date: 2024-07-21
 category:
 draft: false
-image: {
-    src: "../../public/images/wind-rivers.jpg",
-    alt: "Wind Rivers, Wyoming",
+titleImage: {
+    src: "../../public/images/bjj.jpg",
+    alt: "BJJ",
 }
 tags: #layoff #mental-health #bjj
 

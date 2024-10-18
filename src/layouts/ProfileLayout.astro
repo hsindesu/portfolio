@@ -1,0 +1,15 @@
+---
+import HTMLHead from "./HTMLHead.astro"
+
+const { title, description, class: className = '' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <HTMLHead {title} {description} />
+  <body class=`h-svh ${className}`>
+    <main>
+        <slot name="PageBody" />
+    </main>
+  </body>
+</html>

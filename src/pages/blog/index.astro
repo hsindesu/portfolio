@@ -9,10 +9,10 @@ const deGlobImagePaths = deglobPathObject(imagePaths);
 
 <MainLayout title="OnKeyDown blog - Hsin-Fang Wang" class="blog">
 	<div slot="PageBody" class="max-w-screen-md mt-24 mx-auto">
-		<div class="keyboard">
-			<div class="key"></div>
-			<div class="key"></div>
-			<div class="key"></div>
+		<div class="keyboard" aria-hidden>
+			<div class="keyboard-key">on</div>
+			<div class="keyboard-key">key</div>
+			<div class="keyboard-key">down</div>
 		</div>
 		<h1 class="text-8xl">onKeyDown</h1>
 
@@ -24,8 +24,8 @@ const deGlobImagePaths = deglobPathObject(imagePaths);
 				console.log(post.url);
 				if (!draft) {
 					return (
-						<li class="my-6 border-b-2">
-							<div class="prose py-6">
+						<li class="py-6 border-b-2">
+							<div class="prose">
 								<a href={`${post.url}`}>
 									<h2 class="text-4xl">{title}</h2>
 									<Image
@@ -46,18 +46,24 @@ const deGlobImagePaths = deglobPathObject(imagePaths);
 	<style>
 		.keyboard {
 			display: flex;
+			border-bottom: solid 2px #999;
+			border-radius: 6px;
+			width: fit-content;
 		}
-		.key {
-			width: 42px;
-			height: 42px;
+		.keyboard-key {
+			width: 64px;
+			height: 64px;
 			border: solid thin #ccc;
-			box-shadow: inset 0 0 0 12px #ccc;
+			box-shadow: 0px 10px 0 2px #ccc;
+  			border-radius: 2px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 
-		.key:nth-child(2) {
-			box-shadow: inset 0 0 0 11px #999;
-			background-color: #999;
-			margin-top: 12px
+		.keyboard-key:last-child {
+			box-shadow: inset 0 -3px 0 1px #ccc;
+			margin-top: 12px;
 		}
 	</style>
 </MainLayout>

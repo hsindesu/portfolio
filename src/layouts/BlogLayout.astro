@@ -22,12 +22,12 @@ const imgSrc = imagePaths[titleImage.src]();
     <div slot="PageBody" class="text-lg max-w-2xl mx-auto px-6">
         <article class="prose lg:prose-xl">
             <h1 class="uppercase">{title}</h1>
-            <Image
+            <!-- <Image
                 src={imgSrc}
                 alt={titleImage.alt}
                 widths={[240, 540, 800]}
                 sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 800px`}
-            />
+            /> -->
             <p>
                 <span>{ formatDate(date) }</span>
             </p>

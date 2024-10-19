@@ -7,7 +7,6 @@ import MainNav from "../components/MainNav/MainNav.astro";
 
 const glob = import.meta.glob("./blog/*.md");
 const blogPosts = deglobPathObject(import.meta.glob("./blog/*.md"));
-console.log('glob', blogPosts);
 ---
 
 <ProfileLayout title="Hsin-Fang Wang Profile">
@@ -40,10 +39,6 @@ console.log('glob', blogPosts);
 						<a rel="no-follow" target="_blank" href="https://github.com/hsindesu" title="view Github"><Icon name="github" size="30" /></a>
 						<a rel="no-follow" target="_blank" href="https://x.com/HsinDesu" title="view X (Twitter)"><Icon name="x" size="30" /></a>
 					</div>
-
-					<!-- <div class="my-6">
-						<MainNav isMini />
-					</div> -->
 				</div>
 			</section>
 			<section class="flex flex-col justify-center flex-grow basis-[52%] p-32">
@@ -54,12 +49,6 @@ console.log('glob', blogPosts);
 						
 						I use my background in technical communication and user experience to communicate effectively with teammates and customers alike: with empathy, with curiosity, and always looking for the win-win.
 					</p>
-
-					<!-- <div class="flex gap-3 mt-6">
-						<p><a class="border-b-2 text-lg line-block py-1 px-1" href="mailto:hsindesu@gmail.com">Now</a></p>
-						<p><a class="border-b-2 text-lg line-block py-1 px-1" href="mailto:hsindesu@gmail.com">work</a></p>
-						<p><a class="border-b-2 text-lg line-block py-1 px-1" href="mailto:hsindesu@gmail.com">onKeyDown blog</a></p>
-					</div> -->
 				</div>
 			</section>
 		</div>

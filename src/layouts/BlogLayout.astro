@@ -15,7 +15,7 @@ const {
 } = Astro.props.frontmatter;
 
 const imagePaths = import.meta.glob("../../public/images/*");
-const imgSrc = imagePaths[titleImage.src]();
+// const imgSrc = imagePaths[titleImage.src]();
 
 ---
 <MainLayout {title} {description} class="blog font-display">

@@ -1,56 +1,78 @@
 ---
-import ProfileLayout from "../layouts/ProfileLayout.astro"
+import ProfileLayout from "../layouts/ProfileLayout.astro";
 import { deglobPathObject } from "../js/utils";
 
-import { Icon } from 'astro-icon/components'
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 import MainNav from "../components/MainNav/MainNav.astro";
+import ProfilePic from '../images/hsin.jpg';
 
 const glob = import.meta.glob("./blog/*.md");
 const blogPosts = deglobPathObject(import.meta.glob("./blog/*.md"));
 ---
 
 <ProfileLayout title="Hsin-Fang Wang Profile">
-	<div slot="PageBody">
-		<div class="flex flex-wrap h-svh">
-			<section class="flex items-center justify-center flex-grow basis-[48%] p-16 bg-gray-300">
-				
-				<div class="flex flex-col justify-center items-center text-center">
-				
-					<img
-						src="/images/hsin.jpg"
-						title="Profile picture of Hsin"
-						class="drop-shadow-xl max-w-64 mb-6 rounded-md"
-					/>
+  <div slot="PageBody">
+    <div class="flex flex-wrap h-svh">
+      <section
+        class="flex items-center justify-center flex-grow basis-[48%] p-16 bg-gray-300"
+      >
+        <div class="flex flex-col justify-center items-center text-center">
+          <Image
+            src={ProfilePic}
+            alt="Profile pi/Users/hsindesu/dev/profile/src/images/hsin.jpgcture of Hsin"
+            class="drop-shadow-xl max-w-64 mb-6 rounded-md"
+            width={200}
+            height={200}
+          />
 
-					<h1 class="text-4xl">Hsin-Fang (Tony) Wang</h1>
+          <h1 class="text-4xl">Hsin-Fang (Tony) Wang</h1>
 
-					<p>
-						Frontend developer,
-						Full-stack experience,
-					<br />
-						passionate about UX and accessibility.
-					</p>
-					
-					<a class="bg-gray-950 text-white text-lg px-3 py-2 w-[200px] my-3 block" href="mailto:hsindesu@gmail.com">Email me</a>
+          <p>
+            Frontend developer, Full-stack experience,
+            <br />
+            passionate about UX and accessibility.
+          </p>
 
+          <a
+            class="bg-gray-950 text-white text-lg px-3 py-2 w-[200px] my-3 block"
+            href="mailto:hsindesu@gmail.com">Email me</a
+          >
 
-					<div class="flex justify-center gap-3">
-						<a rel="no-follow" target="_blank" href="https://www.linkedin.com/in/hsinfangwang/" title="view LinkedIn"><Icon name="linkedIn" size="30" /></a>
-						<a rel="no-follow" target="_blank" href="https://github.com/hsindesu" title="view Github"><Icon name="github" size="30" /></a>
-						<a rel="no-follow" target="_blank" href="https://x.com/HsinDesu" title="view X (Twitter)"><Icon name="x" size="30" /></a>
-					</div>
-				</div>
-			</section>
-			<section class="flex flex-col justify-center flex-grow basis-[52%] p-32">
-				<div class="prose">
-					<h1 class="text-4xl">Hi, I'm Hsin!</h1>
-					<p>
-						I'm a frontend-leaning full-stack developer with a passion for UX and accessibility.
-						
-						I use my background in technical communication and user experience to communicate effectively with teammates and customers alike: with empathy, with curiosity, and always looking for the win-win.
-					</p>
-				</div>
-			</section>
-		</div>
-	</div>
+          <div class="flex justify-center gap-3">
+            <a
+              rel="no-follow"
+              target="_blank"
+              href="https://www.linkedin.com/in/hsinfangwang/"
+              title="view LinkedIn"><Icon name="linkedIn" size="30" /></a
+            >
+            <a
+              rel="no-follow"
+              target="_blank"
+              href="https://github.com/hsindesu"
+              title="view Github"><Icon name="github" size="30" /></a
+            >
+            <a
+              rel="no-follow"
+              target="_blank"
+              href="https://x.com/HsinDesu"
+              title="view X (Twitter)"><Icon name="x" size="30" /></a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="flex flex-col justify-center flex-grow basis-[52%] p-32">
+        <div class="prose">
+          <h1 class="text-4xl">Hi, I'm Hsin!</h1>
+          <p>
+            I'm a frontend-leaning full-stack developer with a passion for UX
+            and accessibility. I use my background in technical communication
+            and user experience to communicate effectively with teammates and
+            customers alike: with empathy, with curiosity, and always looking
+            for the win-win.
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
 </ProfileLayout>

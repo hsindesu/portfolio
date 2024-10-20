@@ -14,13 +14,6 @@ export default {
       serif: ["Merriweather", "serif"],
     },
     extend: {
-      spacing: {
-        128: "32rem",
-        144: "36rem",
-      },
-      borderRadius: {
-        "4xl": "2rem",
-      },
       fontFamily: {
         display: "Oswald, ui-serif",
       },

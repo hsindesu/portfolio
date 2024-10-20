@@ -8,6 +8,5 @@ import icon from "astro-icon";
 export default defineConfig({
   integrations: [react(), tailwind(), icon()],
   root: "./",
-  base: "/",
-  site: "https://hsindesu.github.io/portfolio/",
+  site: "https://hsindesu.github.io/portfolio",
 });

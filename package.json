@@ -32,6 +32,6 @@
   },
   "_moduleAliases": {
     "@root": ".",
-    "@images": "./public/images"
+    "@images": "./src/images"
   }
 }

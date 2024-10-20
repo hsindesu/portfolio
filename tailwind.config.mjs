@@ -18,10 +18,6 @@ export default {
         display: "Oswald, ui-serif",
       },
     },
-    content: [
-      "./pages/**/*.{astro,html,js}",
-      "./components/**/*.{astro,html,js}",
-    ],
   },
   plugins: [require("@tailwindcss/typography")],
 };
